@@ -57,16 +57,16 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="https://www.linkedin.com/in/spandan-mohanty">LinkedIn</a>
+            <a class="nav-link" href="https://www.linkedin.com/in/spandan-mohanty" target="_blank">LinkedIn</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% static 'resume.pdf' %}">Resume</a>
+            <a class="nav-link" href="{% static 'resume.pdf' %}" target="_blank">Resume</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'allblogs' %}">Blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/spandanmohanty07">GitHub</a>
+            <a class="nav-link" href="https://github.com/spandanmohanty07" target="_blank">GitHub</a>
           </li>
           </li>
         </ul>
@@ -78,28 +78,37 @@
     <section class="jumbotron text-center">
       <div class="container">
         <h1>Spandan Mohanty</h1>
-        <p class="lead text-muted">Hi I am Spandan. I love making apps. I also enjoy playing football.</p>
+        <p class="lead text-muted">I'm a 'Numbers'​ guy.
+
+          My core expertise is in driving, pipelining and building ML solutions hands-on.
+          
+          My work has revolved around leading small teams and architecting end-to-end ML-driven solutions in products/platforms and getting them live into production using Python for most of my work.
+          
+          Have worked with PostgreSQL, Mongo for databases. Spark for distributed computing.</p>
         <p>
-          <a href="mailto: spandan.mohanty@yahoo.com" class="btn btn-primary my-2">Email me</a>
+          <a href="mailto: spandan.mohanty07@gmail.com" class="btn btn-primary my-2">Email Me</a>
         </p>
-        <img src="{% static 'spandan.jpg' %}" height=200></img>>
+        <img src="{% static 'spandan.jpg' %}" height=200></img>
       </div>
     </section>
 
+    <h1 class="text-center">Projects</h1>
     <div class="album py-5 bg-light">
+      
       <div class="container">
 
         <div class="row">
           {% for job in jobs.all %}
           <div class="col-md-4">
-            <a href="{% url 'detail' job.id %}">
+            <a href="{% url 'home_detail' job.id %}">
               <div class="card mb-4 box-shadow">
                 <img class="card-img-top" src="{{ job.image.url }}">
                 <div class="card-body">
-                  <p class="card-text">{{ job.summary }}</p>
+                  <p class="card-text">{{ job.summary }}</p>   
                 </div>
               </div>
-            </a>>
+              
+            </a>
           </div>
           {% endfor %}
         </div>
